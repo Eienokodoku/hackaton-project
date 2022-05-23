@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //env values
 require('dotenv').config();
 
@@ -65,3 +66,20 @@ app.get('/registered-users', (req, res) => res.send(registeredUsers)); //route f
 bot.login(process.env.TOKEN);
 
 
+=======
+require('dotenv').config();
+
+const { Client, Intents } = require('discord.js');
+
+const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+
+bot.on('ready', () => {
+	console.log(`${bot.user.tag} started and runs`)
+})
+
+bot.on('message', (msg) => {
+	console.log(`${msg.author.tag} texted ${msg.content}`);
+})
+
+bot.login(process.env.TOKEN);
+>>>>>>> 1b0ff2abe45ad3f6b0e2aa7e1baa8c9ded87d266
